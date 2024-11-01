@@ -1,0 +1,19 @@
+totoal number of elements:
+5
+Data[1]: 30
+Data[2]: 78
+Data[3]: 23
+Data[4]: 4
+Data[5]: 0
+totoal number of elements:
+10
+Data[1]: 1
+Data[2]: 2
+Data[3]: 3
+Data[4]: 4
+Data[5]: 5
+Data[6]: 6
+Data[7]: 7
+Data[8]: 8
+Data[9]: 9
+Data[10]: 10

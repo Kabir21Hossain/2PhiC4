@@ -1,0 +1,17 @@
+How many student's details you want? 3
+
+Enter the details of student No: 1:
+
+roll:121
+Name:tamanna
+ Marks:79.900
+Enter the details of student No: 2:
+
+roll:23
+Name:RubRai
+ Marks:98.200
+Enter the details of student No: 3:
+
+roll:21
+Name:Asifur
+ Marks:89.300
