@@ -47,6 +47,8 @@ int main()
 
     }
 
+    fclose(o_file);
+
 
 return 0;
 }
