@@ -55,7 +55,7 @@ class Student
     
 
 };
-// bool comp(Student s1,Student s2)
+// bool comp(const Student&s1,const Student& s2)
 // {
 //     return s1.marks>s2.marks;
 // }
@@ -78,6 +78,7 @@ int main()
     cout<<"\n\nAfter Sorting:\n";
 
     //sort(s.begin(),s.end(),comp);
+
     sort(s.begin(),s.end());
 
     for(int i=0;i<3;i++)
