@@ -5,8 +5,7 @@ class Student{
     string name;
     int id;
     int age;
-    Student(){}
-    //Student():name(" "),id(0),age(0){}
+    Student():name(" "),id(0),age(0){}
     Student(string name,int id,int age){
         this->name=name;
         this->id=id;
@@ -14,14 +13,14 @@ class Student{
 
     }
     void take_input(){
+        string n;
+        int i,a;
+       getline(cin,n);
 
-                        string n;
-                        int i,a;
-                        //getline(cin,n);
-                        cin>>n>>i>>a;
-                        id=i;
-                        age=a;
-                        name=n;
+        name=n;
+        cin>>i>>a;
+        id=i;
+        age=a;
     }
 
     void print_info()const
@@ -35,20 +34,18 @@ class Student{
 };
 int main()
 {
-    Student s[3];
-    for(int i=0;i<3;i++)
-    {
-       // s[i]=Student("kabir",i,89+i);
-       s[i].take_input();
+    // Student *s=new Student;
+    // (*s).take_input();
+    // (*s).print_info();
 
+    // s->take_input();
+    // s->print_info();
+    // delete s;
+    // Student *s1=new Student("Kabir",78,1);
+    // s1->print_info();
 
-    }
-    for(int i=0;i<3;i++)
-    {
-        s[i].print_info();
-        cout<<endl;
+    // delete s1;
 
-    }
 
    return 0;
 }
