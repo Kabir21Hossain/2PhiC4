@@ -4,14 +4,12 @@ int main()
 {
     // constant time operation
     // time complexity O(1)
-    /*
-    space complexity O(1)
-    because 7 variable to be stored. Since it's constant.
-    
-    */
-    
-         
-
+      /*
+      space complexity O(1)
+      because 7 variable to be stored. Since it's constant.
+      
+      */
+      
     // int a,b,c;
     // cin>>a>>b>>c;
     // int maxi=max({a,b,c});
@@ -24,16 +22,17 @@ int main()
     // cout<<sum<<endl;
     // cout<<mul<<endl;
 
-    /*
-    O(n) =time complexity
-    
-    */
-  int n;
+      /*
+      O(n) =time complexity
+      */
+
+   
+   int n;
    cin>>n;
    vector<int>v(n);
    for(int i=0;i<n;i++)
    {
-    cin>>v[i];
+      cin>>v[i];
    }
 //    int maxi=v[0];
 //    int mini=v[0];
@@ -67,18 +66,20 @@ O(n*n)
 //     cout<<"i "<<i<<" "<<ans<<endl;
 // }
 
-for(int i=0;i<n;i++)
-{
-    string ans="no";
-    for(int j=i+1;j<n;j++)
-    {
-        if(v[i]==v[j])
-        {
-            ans="yes";
-        }
-    }
-    cout<<"i: "<<i<<" "<<ans<<endl;
-}
+// for(int i=0;i<n;i++)
+// {
+//     string ans="no";
+//     for(int j=i+1;j<n;j++)
+//     {
+//         if(v[i]==v[j])
+//         {
+//             ans="yes";
+//         }
+//     }
+//     cout<<"i: "<<i<<" "<<ans<<endl;
+// }
+
+
 
 
     
