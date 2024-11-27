@@ -1,5 +1,133 @@
 #include<bits/stdc++.h>
 using namespace std;
+/*
+class Array{
+    private:
+        
+        int *arr;
+        int cap;
+        int sz;
+
+        void Increase_capacity()
+        {
+            cap=cap*2;
+            int *tmp=new int[cap];
+            for(int i=0;i<sz;i++)
+            {
+                tmp[i]=arr[i];
+
+            }
+            delete [] arr;
+            arr=tmp;
+
+
+        }
+
+    public:
+
+        Array()
+        {
+            arr=new int[1];
+            cap=1;
+            sz=0;
+
+        }
+    
+    void Push_back(int x)
+    {
+        if(sz==cap)
+        {
+            Increase_capacity();
+        }
+        arr[sz]=x;
+        sz++;
+
+    }
+
+    int getSize()
+    {
+        return sz;
+
+    }
+
+    int get_element(int idx)
+    {
+        if(idx>sz)
+        {
+            cout<<"Out of bounds\n";
+           
+        }
+        else
+        return arr[idx];
+
+    }
+
+    void Clear()
+    {
+        delete [] arr;
+        sz=0;
+    }
+    bool isEmpty()
+    {
+        if(sz==0)
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    void Pop_back()
+    {
+        if(sz==0)
+        cout<<"underFlow\n";
+        else 
+        {
+            sz--;
+
+        }
+
+    }
+
+    void print()
+    {
+        for(int i=0;i<sz;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+
+    }
+
+    void Insert(int pos,int x)
+    {
+        if(pos>sz)
+        {
+            cout<<"out of bounds\n";
+
+        }
+        else
+        {
+            for(int i=sz-1;i>=pos;i--)
+        {
+            arr[i+1]=arr[i];
+        }
+        arr[pos]=x;
+        sz++;
+        }
+        
+    }
+    void Erase(int pos)
+    {
+        for(int i=pos;i<=sz;i++)
+        {
+            arr[i]=arr[i+1];
+
+        }
+        sz--;
+
+    }
+};
+*/
 class Array{
     private:
         int *a;
@@ -142,7 +270,7 @@ int main()
     if(a.isEmpty())
     {
         cout<<"Empty"<<endl;
-        
+
     }
     
 
