@@ -1,288 +1,71 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-/*
-class Array{
-    private:
-        
-        int *arr;
-        int cap;
-        int sz;
 
-        void Increase_capacity()
-        {
-            cap=cap*2;
-            int *tmp=new int[cap];
-            for(int i=0;i<sz;i++)
-            {
-                tmp[i]=arr[i];
+// Function to perform counting sort based on a specific digit represented by exp
+void countSort(vector<int>& v, int exp) {
+    vector<int> output(v.size()); // Output array to hold sorted numbers
+    int count[10] = {0};          // Count array for digits (0-9)
 
-            }
-            delete [] arr;
-            arr=tmp;
-
-
-        }
-
-    public:
-
-        Array()
-        {
-            arr=new int[1];
-            cap=1;
-            sz=0;
-
-        }
-    
-    void Push_back(int x)
-    {
-        if(sz==cap)
-        {
-            Increase_capacity();
-        }
-        arr[sz]=x;
-        sz++;
-
+    // Count occurrences of each digit at the current place value
+    for (int i = 0; i < v.size(); i++) {
+        int index = (v[i] / exp) % 10;
+        count[index]++;
     }
 
-    int getSize()
-    {
-        return sz;
-
+    // Update count array to store cumulative counts
+    for (int i = 1; i < 10; i++) {
+        count[i] += count[i - 1];
     }
 
-    int get_element(int idx)
-    {
-        if(idx>sz)
-        {
-            cout<<"Out of bounds\n";
-           
-        }
-        else
-        return arr[idx];
-
+    // Build the output array in reverse to maintain stability
+    for (int i = v.size() - 1; i >= 0; i--) {
+        int index = (v[i] / exp) % 10;
+        output[count[index] - 1] = v[i];
+        count[index]--;
     }
 
-    void Clear()
-    {
-        delete [] arr;
-        sz=0;
+    // Copy the sorted numbers back to the original array
+    for (int i = 0; i < v.size(); i++) {
+        v[i] = output[i];
     }
-    bool isEmpty()
-    {
-        if(sz==0)
-        {
-            return true;
-        }
-        else return false;
+}
+
+// Radix Sort function
+void radix_sort(vector<int>& v) {
+    // Find the maximum number to determine the number of digits
+    int maxNum = *max_element(v.begin(), v.end());
+
+    // Perform counting sort for each digit (1s, 10s, 100s, etc.)
+    for (int exp = 1; maxNum / exp > 0; exp *= 10) {
+        countSort(v, exp);
     }
+}
 
-    void Pop_back()
-    {
-        if(sz==0)
-        cout<<"underFlow\n";
-        else 
-        {
-            sz--;
-
-        }
-
+// Utility function to print the array
+void print(const vector<int>& v) {
+    for (auto it : v) {
+        cout << it << " ";
     }
+    cout << endl;
+}
 
-    void print()
-    {
-        for(int i=0;i<sz;i++)
-        {
-            cout<<arr[i]<<" ";
-        }
-        cout<<endl;
+int main() {
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-    }
-
-    void Insert(int pos,int x)
-    {
-        if(pos>sz)
-        {
-            cout<<"out of bounds\n";
-
-        }
-        else
-        {
-            for(int i=sz-1;i>=pos;i--)
-        {
-            arr[i+1]=arr[i];
-        }
-        arr[pos]=x;
-        sz++;
-        }
-        
-    }
-    void Erase(int pos)
-    {
-        for(int i=pos;i<=sz;i++)
-        {
-            arr[i]=arr[i+1];
-
-        }
-        sz--;
-
-    }
-};
-*/
-class Array{
-    private:
-        int *a;
-        int cap;
-        int sz;
-        void Increase_capacity()
-        {
-            cap=cap*2;
-            int *tmp=new int[cap];
-            for(int i=0;i<sz;i++)
-            {
-                tmp[i]=a[i];
-            }
-            delete []a;
-            a=tmp;
-            
-        }
-
-    public:
-        Array()
-        {
-            a=new int [1];
-            cap=1;
-            sz=0;
-        }
-
-    void Push_back(int x)
-    {
-        if(cap==sz)
-        {
-            //double the size of the array
-            Increase_capacity();
-
-        }
-       
-        
-
-            a[sz]=x;
-             sz++;
-        
-    
+    vector<int> v(n);
+    cout << "Enter the elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
     }
 
-    int getSize()
-    {
-        return sz;
+    // Sort the array using Radix Sort
+    radix_sort(v);
 
-    }
+    // Print the sorted array
+    cout << "Sorted array: ";
+    print(v);
 
-    int getElement(int idx)
-    {
-        if(idx<=sz)
-        {
-            return a[idx];
-        }
-        else 
-        {
-            cout<<"Out of bounds\n";
-        }
-    }
-
-    void Insert(int pos,int val)
-    {
-        if(cap==sz)
-        {
-            Increase_capacity();
-        }
-
-        for(int i=sz;i>=pos;i--)
-        {
-            a[i+1]=a[i];
-
-        }
-        a[pos]=val;
-        sz++;
-    }
-    void Pop_back()
-    {
-        if(sz==0)
-        {
-            cout<<"Underflow\n";
-
-        }
-        else 
-        sz--;
-    }
-
-    void Erase(int idx)
-    {
-        if(idx>sz)
-        {
-            cout<<"overflow\n";
-            
-        }
-        else 
-        {
-            for(int i=idx;i<sz;i++)
-            {
-                a[i]=a[i+1];
-
-            }
-            sz--;
-        }
-
-
-    }
-
-    bool isEmpty()
-    {
-        return sz;
-
-    }
-    void Clear()
-    {
-        delete []a;
-    }
-
-    void print()
-    {
-        for(int i=0;i<sz;i++)
-        {
-            cout<<a[i]<<" ";
-        }
-        cout<<endl;
-    }
-
-
-};
-int main()
-{
-    Array a;
-    a.Push_back(30);
-    a.Push_back(40);
-    a.Push_back(50);
-    a.Push_back(60);
-    a.Push_back(70);
-    a.Push_back(80);
-    a.print();
-    a.Clear();
-    if(a.isEmpty())
-    {
-        cout<<"Empty"<<endl;
-
-    }
-    
-
-   
-    // a.Insert(3,100);
-    // a.print();
-
-    // cout<<endl<<"size:"<<a.getSize()<<endl;
-    // cout<<"Element at index 3:"<<a.getElement(3)<<endl;
-
-
-
-  
     return 0;
-} 
+}
