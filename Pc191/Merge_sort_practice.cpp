@@ -63,18 +63,27 @@ return sorted_a;
 }
 
 int main()
-{
-    vector<int>a;
-    int n;
-    cout<<"How many elements you want to provide:\n";
-    cin>>n;
-    cout<<"enter elements:\n";
-    for(int i=0;i<n;i++)
-    {
-        cin>>a[i];
-    }
+ {
+//     vector<int>a;
+//     int n;
+//     cout<<"How many elements you want to provide:\n";
+//     cin>>n;
+//     cout<<"enter elements:\n";
+//     for(int i=0;i<n;i++)
+//     {
+//         cin>>a[i];
+//     }
 
-    vector<int>ans=merge_sort(a);
+vector<int>a;
+for(int i=0;i<5;i++)
+{
+    int b;
+    cin>>b;
+    a.push_back(b);
+
+}
+    vector<int>ans;
+    ans=merge_sort(a);
     for(auto it:ans)
     {
         cout<<it<<" ";
