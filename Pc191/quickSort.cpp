@@ -1,61 +1,133 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+// #include <iostream>
+// #include <vector>
+// #include <algorithm>
+// using namespace std;
+
+// int partition(vector<int>& v, int a, int b) {
+//     int pivot = v[a];
+//     int s = a, e = b;
+
+//     while (s < e) {
+//         // Move `s` forward while it's within bounds and less than or equal to the pivot
+//         do {
+//             s++;
+//         } while (s < b && v[s] <= pivot);
+
+//         // Move `e` backward while it's greater than the pivot
+//         do {
+//             e--;
+//         } while (e > a && v[e] > pivot);
+
+//         // Swap elements at `s` and `e` if indices haven't crossed
+//         if (s < e) {
+//             swap(v[s], v[e]);
+//         }
+//     }
+
+//     // Place the pivot in its correct position
+//     swap(v[a], v[e]);
+//     return e;
+// }
+
+// void quick_sort(vector<int>& v, int a, int b) {
+//     if (a >= b - 1) // Base case: single-element or empty range
+//         return;
+
+//     int mid = partition(v, a, b);
+//     quick_sort(v, a, mid);       // Sort the left subarray
+//     quick_sort(v, mid + 1, b);   // Sort the right subarray
+// }
+
+// int main() {
+//     int n;
+//     cout << "Enter number of elements:\n";
+//     cin >> n;
+
+//     vector<int> v(n);
+//     cout << "Enter the elements:\n";
+//     for (int i = 0; i < n; i++) {
+//         cin >> v[i];
+//     }
+
+//     quick_sort(v, 0, v.size());
+
+//     cout << "Sorted elements:\n";
+//     for (auto it : v) {
+//         cout << it << " ";
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+#include<bits/stdc++.h>
 using namespace std;
+int partition(vector<int>&v,int a,int b)
+{
+    int i=a,j=b;
+    int pivot=v[a];
 
-int partition(vector<int>& v, int a, int b) {
-    int pivot = v[a];
-    int s = a, e = b;
+while(i<j)
+{
 
-    while (s < e) {
-        // Move `s` forward while it's within bounds and less than or equal to the pivot
-        do {
-            s++;
-        } while (s < b && v[s] <= pivot);
 
-        // Move `e` backward while it's greater than the pivot
-        do {
-            e--;
-        } while (e > a && v[e] > pivot);
+    do
+    {
+       i++;
+    } while (v[i]<=pivot && i<b);
 
-        // Swap elements at `s` and `e` if indices haven't crossed
-        if (s < e) {
-            swap(v[s], v[e]);
-        }
+    do
+    {
+       j--;
+    } while (v[j]>pivot && j>a);
+
+    if(i<j)
+    {
+        swap(v[i],v[j]);
     }
 
-    // Place the pivot in its correct position
-    swap(v[a], v[e]);
-    return e;
 }
 
-void quick_sort(vector<int>& v, int a, int b) {
-    if (a >= b - 1) // Base case: single-element or empty range
-        return;
+    swap(v[a],v[j]);
+    return j;
 
-    int mid = partition(v, a, b);
-    quick_sort(v, a, mid);       // Sort the left subarray
-    quick_sort(v, mid + 1, b);   // Sort the right subarray
+    
+
 }
 
-int main() {
+void quick_sort(vector<int>&v,int a,int b)
+{
+    if(b-a<=1)
+    return;
+
+    int mid=partition(v,a,b);
+    quick_sort(v,a,mid);
+    quick_sort(v,mid+1,b);
+
+
+}
+int main()
+{
     int n;
-    cout << "Enter number of elements:\n";
-    cin >> n;
-
-    vector<int> v(n);
-    cout << "Enter the elements:\n";
-    for (int i = 0; i < n; i++) {
-        cin >> v[i];
+    cout<<"Enter the element number:\n";
+    cin>>n;
+    
+    vector<int>v(n);
+    cout<<"Enter elements:\n";
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
     }
 
-    quick_sort(v, 0, v.size());
 
-    cout << "Sorted elements:\n";
-    for (auto it : v) {
-        cout << it << " ";
+    quick_sort(v,0,v.size());
+
+
+    for(auto it: v)
+    {
+        cout<<it<<" ";
+
     }
-    cout << endl;
 
-    return 0;
+   return 0;
 }
