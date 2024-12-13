@@ -1,95 +1,83 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
-
-vector<int>merge_sort(vector<int>a)
+void merges(vector<int>&v1,vector<int>&v2,vector<int>&v)
 {
-    if(a.size()<=1)
-    return a;
-    
-    vector<int>b;
-    vector<int>c;
-    int mid=a.size()/2;
-
-    for(int i=0;i<mid;i++)
-        b.push_back(a[i]);
-
-    for(int i=mid;i<a.size();i++)
-        c.push_back(a[i]);
-    
-
-    vector<int>sorted_b=merge_sort(b);
-    vector<int>sorted_c=merge_sort(c);
-    vector<int>sorted_a;
-
-
-    int idx1=0,idx2=0;
-    while(idx1<sorted_b.size() && idx2<sorted_c.size())
+    int i=0,j=0,k=0;
+    while(i<v1.size() && j<v2.size())
     {
-        if(sorted_b[idx1]<sorted_c[idx2])
+        if(v1[i]<=v2[j])
         {
-            sorted_a.push_back(sorted_b[idx1]);
-            idx1++;
-        }
-        else 
-        {
-            sorted_a.push_back(sorted_c[idx2]);
-            idx2++;
+            v[k]=v1[i];
+            i++;
+            k++;
 
         }
-
+        else{
+             v[k]=v2[j];
+            j++;
+            k++;
+        }
 
     }
 
-    
-        while(idx1<sorted_b.size())
-        {
-            sorted_a.push_back(sorted_b[idx1]);
-            idx1++;
-        }
-        
-    
-
-   
-        while(idx2<sorted_c.size())
-        {
-            sorted_a.push_back(sorted_c[idx2]);
-            idx2++;
-        }
-
-
-return sorted_a;
-
+    while(i<v1.size())
+    {
+        v[k]=v1[i];
+        i++;
+        k++;
+    }
+     while(j<v2.size())
+    {
+        v[k]=v2[j];
+        j++;
+        k++;
+    }
 
 }
-
-int main()
- {
-//     vector<int>a;
-//     int n;
-//     cout<<"How many elements you want to provide:\n";
-//     cin>>n;
-//     cout<<"enter elements:\n";
-//     for(int i=0;i<n;i++)
-//     {
-//         cin>>a[i];
-//     }
-
-vector<int>a;
-for(int i=0;i<5;i++)
+void merge_sort(vector<int>&v)
 {
-    int b;
-    cin>>b;
-    a.push_back(b);
+    if(v.size()<2)
+    return;
+    int mid=v.size()/2;
+    vector<int>a,b;
+    for(int i=0;i<mid;i++)
+    {
+        a.push_back(v[i]);
+
+    }
+
+    for(int i=mid;i<v.size();i++)
+    {
+        b.push_back(v[i]);
+
+    }
+
+    merge_sort(a);
+    merge_sort(b);
+    merges(a,b,v);
+
+
+
 
 }
-    vector<int>ans;
-    ans=merge_sort(a);
-    for(auto it:ans)
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+merge_sort(v);
+    for(auto it: v)
     {
         cout<<it<<" ";
-        
     }
 
 
-   return 0;
+
+    return 0;
 }
