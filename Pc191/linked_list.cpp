@@ -142,7 +142,7 @@ class linked_list
         else 
         {
             node * temp=head;
-            while(i!=index-1 && i<len()-1)
+            while(i!=index-1 || i<len()-1)
             {
                 temp=temp->next;
                 i++;
@@ -183,7 +183,7 @@ class linked_list
             else 
             {
                 node* temp=head;
-                while(i!=index-1 && i<len()-1)
+                while(i!=index-1 || i<len()-1)
                 {
                     temp=temp->next;
                     i++;
@@ -240,6 +240,7 @@ int main()
     l.deleteAtAny(4);
     l.deleteAtAny(5);
     l.print();
+
 
 
 
