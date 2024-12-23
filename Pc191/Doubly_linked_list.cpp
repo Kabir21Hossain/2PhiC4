@@ -200,6 +200,7 @@ class doubly
         {
             temp=temp->next;
 
+            curr_index++;
         }
         node * a=head;
         while(a!=NULL)
@@ -209,7 +210,7 @@ class doubly
 
         }
         head=temp;
-        
+
     }
 
     int len()
