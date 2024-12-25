@@ -6,10 +6,11 @@ class node
     public:
         t data;
         node * next;
-};
 
+
+};
 template<class t>
-class Stack
+class linked_list
 {
     private:
         node<t>* head;
@@ -18,7 +19,7 @@ class Stack
     public:
         
 
-        Stack()
+        linked_list()
         {
             head=NULL;
             sz=0;
@@ -63,8 +64,6 @@ class Stack
 
         t top()
         {
-            if(head==NULL)
-            return;
             return head->data;
 
         }
@@ -99,14 +98,7 @@ class Stack
         }
 
 
-    ~Stack()
-    {
-        while(head!=NULL)
-        {
-            deleteAtHead();
 
-        }
-    }
 
 
 
@@ -114,17 +106,16 @@ class Stack
 
 int main()
 {
-    Stack<int>s1;
-    s1.push(44);
-    s1.push(340);
-    s1.push(440);
-    s1.push(304);
-    s1.push(4);
-    s1.push(3);
-    s1.push(14);
-    s1.push(2);
-    //s1.print();
-    cout<<"after sorting\n";
+    linked_list<int>l1;
+    l1.push(44);
+    l1.push(340);
+    l1.push(440);
+    l1.push(304);
+    l1.push(4);
+    l1.push(3);
+    l1.push(14);
+    l1.push(2);
+    l1.print();
 
     // linked_list<char>l2;
     // l2.push('k');
@@ -135,47 +126,17 @@ int main()
     // l2.print();
 
 
-   // linked_list<int>l2;
+    linked_list<int>l2;
 
-    // while(l1.getsize()!=0)
-    // {
-    //     l2.push(l1.top());
-    //     l1.pop();
-
-    // }
-    // swap(l1,l2);
-    // l1.print();
-
-    Stack<int>temp;
-
-    while(s1.getsize()>0)
-    {   
-         int a=s1.top();
-         s1.pop();
-
-        while(temp.getsize()>0)
-        {
-           
-            if(a>temp.top())
-            break;
-            else 
-            {
-                
-                s1.push(temp.top());
-                temp.pop();
-            }
-        }
-        temp.push(a);
-       
+    while(l1.getsize()!=0)
+    {
+        l2.push(l1.top());
+        l1.pop();
 
     }
-    swap(temp,s1);
-
-    s1.print();
-
-
+    swap(l1,l2);
+    l1.print();
     
-
 
 
     
