@@ -6,9 +6,8 @@ class node
     public:
         t data;
         node * next;
-
-
 };
+
 template<class t>
 class linked_list
 {
@@ -136,7 +135,7 @@ int main()
     }
     swap(l1,l2);
     l1.print();
-    
+
 
 
     

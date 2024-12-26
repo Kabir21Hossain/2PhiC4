@@ -225,7 +225,11 @@ class linked_list
 
         ~ linked_list()
         {
-            delete head;
+           while(head!=NULL)
+           {
+            deleteHead();
+           }
+
 
         }
     

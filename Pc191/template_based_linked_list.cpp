@@ -112,9 +112,10 @@ int main()
         l1.insertAtHead(343);
         l1.print();
 
-        linked_list<double>d;
-        d.insertAtHead(34.5);
-        d.print();
+        // linked_list<double>d;
+        // d.insertAtHead(34.5);
+        // d.print();
+        
         
 
    return 0;

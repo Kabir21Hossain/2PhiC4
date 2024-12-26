@@ -1,5 +1,52 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+// int precd(char ch)
+// {
+//     if(ch=='+' || ch=='-')
+//     return 0;
+//     if(ch=='*' || ch=='/')
+//     return 2;
+
+// }
+
+
+// int main()
+//{
+//     string s;
+//     string ans="";
+
+//     stack<char>temp;
+//     cin>>s;
+//     for(int i=0;i<s.size();i++)
+//     {
+//         char now=s[i];
+//         if(now>='a' && now<='z')
+//         ans+=now;
+
+//         else 
+//         {
+//           while(temp.size() && precd(temp.top()) >= precd(now))
+//           {
+//             ans+=temp.top();
+//             temp.pop();
+
+//           }
+//           temp.push(now);
+
+//         }
+   
+//     }
+//      while(temp.size())
+//     {
+//         ans+=temp.top();
+//         temp.pop();
+
+//     }
+
+
+// cout<<ans;
+
+
 
 // Function to determine precedence of operators
 int pre(char ch) {
