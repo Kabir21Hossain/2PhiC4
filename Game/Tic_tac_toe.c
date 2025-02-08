@@ -123,14 +123,14 @@ int main()
 
         }
         
-        // if(winnerDetector(a,n)==-1)
-        // {
+        if(winnerDetector(a,n)==-1)
+        {
 
-        //      printf("Draw!!.\n");
-        //      grid(a,n);
-        //      break;
+             printf("Draw!!.\n");
+             grid(a,n);
+             break;
 
-        // }
+        }
        
 
     }

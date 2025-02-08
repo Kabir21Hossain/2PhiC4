@@ -273,15 +273,10 @@ bool search(int x)
     {
         pt->right=nullptr;
         delete t;
-        
-    }
-   
-    
 
+    }
 
      }
-
-
 
     void dfs(node *a)
     {
@@ -297,12 +292,12 @@ bool search(int x)
     ~bst()
     {
         dfs(root);
-
     }
 
-     
-
+    
 };
+
+
 int main()
 {
     int n;
@@ -321,9 +316,6 @@ int main()
    //t.Delete(14);
    //t.Delete(75);
    t.Delete(60);
-
-
-   
 
     t.print();
 
