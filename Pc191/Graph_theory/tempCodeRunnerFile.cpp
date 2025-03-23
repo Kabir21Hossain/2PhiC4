@@ -1,89 +1,89 @@
 // #include<bits/stdc++.h>
 // using namespace std;
 // const int N=1e5;
-// vector<int>adj_list[N];
+// const int INF=1e5;
+// vector<pair<int,int>>adj_list[N];
+// int d[N];
 // int visited[N];
-// int parent[N];
 
-// void bfs(int s,int d)
+
+// void Dijkstra(int src,int nodes)
 // {
-//     queue<int>q;
-//     q.push(s);
-//     visited[s]=1;
-//     while(!q.empty())
+//     for(int i=0;i<N;i++)
 //     {
-//         int head=q.front();
-//         q.pop();
-//         for(int x:adj_list[head])
-//         {
-//             if(visited[x]==0)
-//             {
-//                 q.push(x);
-//                 visited[x]=1;
-//                 parent[x]=head;
-//             }
-//             // if(x==d)
-//             // {
-//             //     break;
-
-//             // }
-//         }
+//         d[i]=INF;
 
 //     }
 
-       
-// }
+//     d[src]=0;
 
-// void path_printing(int d,stack<int>&st )
-// {
-//     if(d==-1)
-//     return;
+//     for(int i=0;i<nodes;i++)
+//     {
+//         int selected_node=-1;
+//         for(int j=0;j<nodes;j++)
+//         {
+//             if(visited[j]==1)continue;
 
-//     st.push(d);
-//     d=parent[d];
-//     path_printing(d,st);
+//             if( selected_node==-1||d[selected_node]>d[j])
+//             {
+//                 selected_node=j;
+//             }
+//         }
+//         visited[selected_node]=1;
+
+//         for( pair<int,int> x:adj_list[selected_node])
+//         {
+//             int adj=x.first;
+//             int edge_cost=x.second;
+
+//             if(visited[adj]==0)
+//             {
+//                 if(d[selected_node]+edge_cost<d[adj])
+//                     {
+//                         d[adj]=d[selected_node]+edge_cost;
+
+//                     }
+//             }
+
+//         }
+//     }
+
+
 
 // }
 
 // int main()
 // {
-//     memset(visited,0,sizeof(visited));
-//     memset(parent,-1,sizeof(parent));
+//     int nodes,edges;
+//     cout<<"Enter the number of nodes:";
+//     cin>>nodes;
 
-//     stack<int>st;
-    
-//     int e,v;
-//     cout<<"Enter the number of vertices:";
-//     cin>>v;
 //     cout<<"Enter the number of edges:";
-//     cin>>e;
+//     cin>>edges;
 
-//     for(int i=0;i<e;i++)
+//     cout<<"Enter the edges and weight:\n";
+
+//     for(int i=0;i<edges;i++)
 //     {
-//         int u,v;
-//         cin>>u>>v;
-
-//         adj_list[u].push_back(v);
-//         adj_list[v].push_back(u);
+//         int u,v,w;
+//         cin>>u>>v>>w;
+//         adj_list[u].push_back({v,w});
+//         adj_list[v].push_back({u,w});
 
 //     }
 
+//     int src;
+//     cout<<"Enter the source:";
+//     cin>>src;
 
-//     int src,dst;
-//     cout<<"Enter the source and destinition:";
+//     Dijkstra(src,nodes);
 
-//     cin>>src>>dst;
-
-//     bfs(src,dst);
-
-//     path_printing(dst,st);
-
-//     while(!st.empty())
+//     for(int i=0;i<nodes;i++)
 //     {
-//         cout<<st.top()<<" ";
-//         st.pop();
+//         cout<<i<<"shortest distance: "<<d[i]<<endl;
 
 //     }
+
 
 
 
@@ -92,96 +92,87 @@
 // }
 
 
+//dijkstra for once more
 
 #include<bits/stdc++.h>
 using namespace std;
 const int N=1e5;
-vector<int>adj_list[N];
+vector<pair<int,int>>adj_list[N];
 int visited[N];
-int parent[N];
+int d[N];
+const int INF=1e9;
 
-void bfs(int s,int d)
+void Dijkstra(int src,int nodes)
 {
-    queue<int>q;
-    q.push(s);
-    visited[s]=1;
-    while(!q.empty())
+    for(int i=0;i<nodes;i++)
     {
-        int head=q.front();
-        q.pop();
-        if(head==d) break;
+        d[i]=INF;
+    }
 
-        for(int x:adj_list[head])
+    d[src]=0;
+
+    for(int i=0;i<nodes;i++)
+    {
+        int selected_node=-1;
+
+        for(int j=0;j<nodes;j++)
         {
-            if(visited[x]==0)
+            if(visited[j]==1)continue;
+            if(selected_node==-1 || d[selected_node]>d[j])
             {
-                q.push(x);
-                visited[x]=1;
-                parent[x]=head;
-
+                selected_node=j;
             }
+
+            
         }
-        
+        visited[selected_node]=1;
 
+            for(pair<int,int> x: adj_list[selected_node])
+            {
+                int adj=x.first;
+                int edge_cost=x.second;
+
+                if(visited[adj]==0)
+                {
+                    if(d[selected_node]+edge_cost<d[adj])
+                    {
+                        d[adj]=d[selected_node]+edge_cost;
+
+                    }
+                }
+            }
     }
-
 }
-
-vector<int> path_printing(int d)
-{
-    vector<int>path;
-    if(d==-1)
-    {
-        cout<<"No path found\n";
-        return path;
-    }
-
-    while(d!=-1)
-    {
-        path.push_back(d);
-        d=parent[d];
-
-    }
-
-    reverse(path.begin(),path.end());
-    return path;
-}
-
 int main()
 {
-    memset(visited,0,sizeof(visited));
-    memset(parent,-1,sizeof(parent));
-
     int v,e;
+    cout<<"Enter the number of nodes:";
+    cin>>v;
     cout<<"Enter the number of edges:";
     cin>>e;
-    cout<<"Enter the number of vertices:";
-    cin>>v;
 
-    cout<<"Enter the edges:\n";
-
+    cout<<"Enter the number of edges and weight:\n";
     for(int i=0;i<e;i++)
     {
-        int u,v;
-        cin>>u>>v;
+        int u,v,w;
+        cin>>u>>v>>w;
 
-        adj_list[u].push_back(v);
-        adj_list[v].push_back(u);
+        adj_list[u].push_back({v,w});
+        adj_list[v].push_back({u,w});
+    
     }
 
-    int src,dst;
-    cout<<"Enter the source and destination:";
-    cin>>src>>dst;
+    int src;
+    cout<<"Enter the source:";
+    cin>>src;
 
-    bfs(src,dst);
+    Dijkstra(src,v);
 
-    vector<int>path=path_printing(dst);
-    for(int node:path)
+    for(int i=0;i<v;i++)
     {
-        cout<<node<<" ";
-        
-    }
+        cout<<i<<" th node:"<<d[i]<<endl;
 
+    }
 
 
 
