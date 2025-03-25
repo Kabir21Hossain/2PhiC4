@@ -3,39 +3,9 @@
 #include<queue>
 using namespace std;
 const int N=1e5;
-const int INF=1e9;
-int d[N];
 int visited[N];
 vector<int>adj_list[N];
 int degree[N];
-
-
-
-void bfs(int src)
-{
-    queue<int>q;
-    q.push(src);
-    visited[src]=1;
-    while(!q.empty())
-    {
-        int head=q.front();
-        q.pop();
-
-        for(int x: adj_list[head])
-        {
-            degree[head]++;
-            if(visited[x]==0)
-            {
-                q.push(x);
-                visited[x]=1;
-
-            }
-        }
-    }
-}
-
-
-
 
 int main()
 {
@@ -54,7 +24,12 @@ int main()
         adj_list[v].push_back(u);
     
     }
-    bfs(0);
+   
+    for(int i=0;i<v;i++)
+    {
+        degree[i]=adj_list[i].size();
+        
+    }
 
     for(int i=0;i<v;i++)
     {
@@ -72,7 +47,24 @@ int main()
 
 /*
 
-
+Enter the number of vertices:6
+Enter the number of edges:9
+Enter the edges and weight:
+0 1
+0 3
+1 3
+1 4
+3 4
+3 5
+4 5
+4 2
+5 2
+0 th node: degree: 2
+1 th node: degree: 3
+2 th node: degree: 2
+3 th node: degree: 4
+4 th node: degree: 4
+5 th node: degree: 3
 
 
 */
