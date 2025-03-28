@@ -1,3 +1,42 @@
+/*
+input- a directed weighted graph
+output- distance array
+n= number of nodes
+m= number of edges
+- create  a distance array and initialize it with infinity value
+- create a parent array and initialize it with -1
+- d[src]=1; //O(1)
+- negative_cycle=false
+- for i=1 to n-1: //O(n)
+    - for all edge e(u,v,w)://O(m)
+        if d[u]+w<d[v]
+            d[v]=d[u]+w
+            parent[v]=u
+
+
+-for all edge e(u,v,w):
+    if d[u] != INF and d[u]+w<d[v]:
+        negative_cycle=true
+        break  
+
+- output the distance array
+-take input of source and destination
+- print the path
+
+
+time complexity=
+O(n*m)
+for worst case, m=n*n
+
+O(n*n^2)=O(n^3)
+
+*/
+
+
+
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 const int N=1e5 + 5;
