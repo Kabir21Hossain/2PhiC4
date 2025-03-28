@@ -1,20 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
-int sum(int a[],int x)
-{
-    if(x>=1)
-    {
-        return a[x-1]+sum(a,x-1);
-
-    }
-
-}
 int main()
 {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        stack<char>st;
+        cin>>n;
+        string s;
+        cin>>s;
 
-    int arr[]={8,3,1,10,33,4};
-    int x=sum(arr,6);
-    cout<<x;
-    
+        for(char c:s)
+        {
+            if(c==')' && st.top()!='(')
+            st.push(c);
+            else if(c==')' && st.top()=='(')
+            {
+                st.pop();
+
+            }
+            else st.push(c);
+
+        }
+
+        cout<<st.size()/2<<endl;
+        
+
+    }
    return 0;
 }
