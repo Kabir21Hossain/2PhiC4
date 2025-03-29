@@ -1,76 +1,58 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-// tabulation solution(iterative approach)
-const int N=1e5;
-int dp[N];
-int h[N];
 
-// int main()
-// {
-//     int n;
-//     cin>> n;
-    
+const int N=101;
+const int M=1e5;
+int dp[N][M];
+int arr[N];
 
-    
+/*
+6 9
+3 34 4 12 5 2
 
-//     for(int i = 1 ;i<=n ; i++)
-//     {
-//         cin>>h[i];
-//     }
-//     dp[1]=0;
-//     for(int i=2;i<=n;i++)
-//     {
-//         int ans1=dp[i-1]+abs(h[i]-h[i-1]);
-//         if(i==2)
-//         {
-//             dp[i]=ans1;
-//             continue;
-
-//         }
-
-//         int ans2=dp[i-2]+abs(h[i]-h[i-2]);
-
-//         dp[i]=min(ans1,ans2); 
-
-
-//     }
-//     cout<<dp[n];
-
-
-//     return 0;
-
-// }
-
-
-// Memoization APPROACH
-
-int stone(int n)
+*/
+int subset_sum(int n,int t)
 {
-    if(n==1)
-        return 0;
+    if(t==0 && n>=0)
+        return true;
+    
+        if(dp[n][t]!=-1)
+            return dp[n][t];
+   
+    int ans1= subset_sum(n-1,t);
+        if(t< arr[n])
+        {
+            dp[n][t]=ans1;
+            return ans1;
+        }
+         
+  
+    int ans2 = subset_sum(n-1,t-arr[n]);
 
-    if(dp[n])
-    return dp[n];
-    int ans1=stone(n-1)+abs(h[n]-h[n-1]);
-    if(n==2) {dp[n]=ans1; return dp[n];}
-    int ans2=stone(n-2)+abs(h[n]-h[n-2]);
-    dp[n]=min(ans1,ans2);
-    return dp[n];
+    int ans=ans1 or ans2;
+    dp[n][t]= ans;
+
+
 }
+
 int main()
 {
-    int n;
-    cin>>n;
+    int n,target;
+    cin>>n>>target;
 
     for(int i=1;i<=n;i++)
-    {
-        cin>>h[i];
-
+        cin>>arr[i];
+    
+    for(int i=0;i<=n;i++){
+        for(int j=0;j<=target;j++){
+            dp[i][j]=-1;
+        }
     }
 
+    cout<<subset_sum(n,target);
     
-    cout<<dp[n];
+    
+    
 
-return 0;
-
+    return 0;
 }
