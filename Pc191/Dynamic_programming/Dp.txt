@@ -1,0 +1,32 @@
+Dynamic Programming states
+
+1. Define states
+2. define recursive relation
+3. find solution for smaller sub problems
+
+
+Dynamic programming of two types
+
+1.Memoization Method(Recursive approach)
+2.Tabulation Method (Iterative approach)
+
+Memoization Method-
+ 
+fun()
+{
+    1.handle base case
+    2. if current state is solved,return the solution
+    3.calculate the solution for smaller sub problems
+}
+
+
+Tabulation Method
+
+main()
+{
+    1. handle the base case
+    2.loop through the states
+        find the solution for samller sub problems
+        
+    
+}
