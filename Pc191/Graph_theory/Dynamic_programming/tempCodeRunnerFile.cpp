@@ -1,58 +1,39 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-const int N=101;
-const int M=1e5;
-int dp[N][M];
-int arr[N];
+const int N = 101;
+int dp[N][N], grid[N][N];
 
-/*
-6 9
-3 34 4 12 5 2
+int mini_path(int n, int m) {
+    if(n == 0 && m == 0)
+        return grid[n][m];
 
-*/
-int subset_sum(int n,int t)
-{
-    if(t==0 && n>=0)
-        return true;
-    
-        if(dp[n][t]!=-1)
-            return dp[n][t];
-   
-    int ans1= subset_sum(n-1,t);
-        if(t< arr[n])
-        {
-            dp[n][t]=ans1;
-            return ans1;
-        }
-         
-  
-    int ans2 = subset_sum(n-1,t-arr[n]);
+    if(dp[n][m] != -1)
+        return dp[n][m];
 
-    int ans=ans1 or ans2;
-    dp[n][t]= ans;
+    int ans = INT_MAX;
 
+    if(n > 0)
+        ans = min(ans, mini_path(n-1, m) + grid[n][m]);
 
+    if(m > 0)
+        ans = min(ans, mini_path(n, m-1) + grid[n][m]);
+
+    return dp[n][m] = ans;
 }
 
-int main()
-{
-    int n,target;
-    cin>>n>>target;
+int main() {
+    int n, m;
+    cin >> n >> m;
 
-    for(int i=1;i<=n;i++)
-        cin>>arr[i];
-    
-    for(int i=0;i<=n;i++){
-        for(int j=0;j<=target;j++){
-            dp[i][j]=-1;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            cin >> grid[i][j];
+            dp[i][j] = -1;
         }
     }
 
-    cout<<subset_sum(n,target);
-    
-    
-    
+    cout << mini_path(n-1, m-1) << endl;
 
     return 0;
 }
