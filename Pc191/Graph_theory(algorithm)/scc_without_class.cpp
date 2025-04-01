@@ -109,15 +109,20 @@ int main(){
     cout<<"Number of scc: "<<count_scc();
 
 
-    cout<<endl;
+    cout<<endl<<"SCC's are\n";
 
-   for(int i=0; i< scc.size(); i++){
-
-    cout<<"scc: "<< i+1<<": ";
-    for(int j=0; j< scc[i].size(); j++){
-        cout<<scc[i][j]<<" ";
+    for (int i = 0; i < scc.size(); i++) {
+        if (!scc[i].empty()) {  // Only print non-empty SCCs
+            cout << "SCC " << i + 1 << ": ";
+            for (int node : scc[i]) {
+                cout << node << " ";
+            }
+            cout << endl;
+        }
     }
-   }
+
+
+
 
    return 0;
 
