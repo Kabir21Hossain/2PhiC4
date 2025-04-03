@@ -1,91 +1,62 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
-
+#include<bits/stdc++.h>
 using namespace std;
-vector<vector<int>>adj_list;
-vector<pair<int,int>>bridges;
+vector<vector<pair<int,int>>>adj_list;
 vector<bool>visited;
-vector<int>low,dis;
-int time_counter=0;
 
+int prims_algo(){
+    priority_queue< pair<int,int> , vector < pair<int,int> >, greater< pair<int,int> > >pq;
+    pq.push({0,0});
 
-void dfs(int u, int parent){
+    int sum=0;
 
-    visited[u]=true;
-    dis[u]=low[u]=time_counter++;
+    while(!pq.empty()){
 
-    for(int v: adj_list[u]){
+        pair<int,int>p=pq.top();
+        pq.pop();
 
-        if(v==parent) continue;
+        sum+=p.first;
         
-        if( visited[v]){
+        int u= p.second;
 
-           low[u]= min(low[u], dis[v]);
-        }
-        else {
-            dfs(v,u);
-            low[u]= min(low[u],low[v]);
+        visited[u]=true;
 
-            if(low[v] > dis[u])
-            {
-                bridges.push_back({u,v});
+        for(auto it : adj_list[u]){
 
-            }
+            int v= it.first;
+            int w= it.second;
+
+            pq.push({w,v});
 
 
         }
-
 
     }
-    
+
+
+
+return sum;
+
 }
-
-void find_bridges(int n){
-    visited.resize(n);
-    visited.assign(n,false);
-    low.assign(n,-1);
-    dis.assign(n,-1);
-
-    for(int i = 0 ; i < n ; i++){
-
-        if(!visited[i]){
-
-            dfs(i,-1);
-        }
-    }
-    
-}
-
-int main(){
-
+int main()
+{
     int v,e;
     cin >> v >> e;
 
+    adj_list.assign(v,vector<pair<int,int>>());
+    visited.assign(v,false);
 
 
-    for(int i =0 ; i < e ; i++){
-
-        int u,v;
-
-        cin>>u>>v;
-
-        adj_list.assign(v,vector<int>());
-
-        adj_list[u].push_back(v);
-        adj_list[v].push_back(u);
-
-    }
-    find_bridges(v);
-
-    cout<<" Bridges are:\n";
-
-    for( pair<int,int>p : bridges){
-        
-        cout<< p.first<< " "<< p.second<<"\n";
+    for( int i = 0 ; i < e; i++){
+        int u,v,w;
+        cin>>u>>v>>w;
+        adj_list[u].push_back({v,w});
+        adj_list[v].push_back({u,w});
 
     }
 
+    int x= prims_algo();
 
-    return 0;
+    cout<<"Total cost:"<<x<<endl;
+
+   return 0;
 }
