@@ -15,6 +15,8 @@ return max( lcs( i+1,j ) , lcs( i,j+1 )  );
 
 */
 
+//Memoization approach
+
 #include<bits/stdc++.h>
 using namespace std;
 const int N=101;
@@ -69,3 +71,5 @@ int main()
 
    return 0;
 }
+
+
