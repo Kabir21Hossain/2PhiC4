@@ -95,7 +95,6 @@ int prims_algo(){
     }
 
 
-
      return sum;
 
 }
