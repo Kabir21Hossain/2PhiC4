@@ -12,6 +12,8 @@ void dsu_union(int x, int y){
     int px=find_parent(x);
     int py= find_parent(y);
 
+    if (px == py) return;
+
     if( dsu_rank[px] > dsu_rank[py]){
         parent[py]=px;
 

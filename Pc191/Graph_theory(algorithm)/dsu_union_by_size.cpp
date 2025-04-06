@@ -15,6 +15,9 @@ void dsu_union(int x,int y){
     int ulp_x=find_parent(x);
     int ulp_y= find_parent(y);
 
+    if( ulp_x == ulp_y) return;
+    
+
     if(dsu_size[ulp_x]> dsu_size[ulp_y]){
         parent[ulp_y]=ulp_x;
         dsu_size[ulp_x]+=dsu_size[ulp_y];
@@ -49,7 +52,7 @@ int main()
 
     }
     else cout<<" They are from different component\n";
-    
+
 
 
    return 0;

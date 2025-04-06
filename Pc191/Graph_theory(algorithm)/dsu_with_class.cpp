@@ -52,6 +52,7 @@ class DSU{
         }
 
 
+       
 
 };
 int main()
@@ -70,7 +71,7 @@ int main()
     }
 
     else cout<<" they are from different component\n";
-    
+
 
 
    return 0;
