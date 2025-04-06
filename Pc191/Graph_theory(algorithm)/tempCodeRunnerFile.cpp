@@ -1,52 +1,85 @@
 #include<bits/stdc++.h>
 using namespace std;
-vector<int>parent;
-vector<int>dsu_size;
 
+vector<int>parent,dsu_size;
 
-int find_parent(int node){
-    if(parent[node] == node) return node;
+class Edge{
+    public:
+        int u,v,w;
+        Edge(int u, int v, int w){
+            this -> u= u;
+            this -> v= v;
+            this -> w= w;
 
-    return parent[node]=find_parent(parent[node]);
+        }
 
+        bool operator < (Edge& e){
+            return this-> w< e.w;
 
-}
+        }
 
-void dsu_union(int x, int y){
-    int upx=find_parent(x);
-    int upy=find_parent(y);
+};
 
-    if(dsu_size[upx]> dsu_size[upy]){
-        parent[upy]=upx;
-        dsu_size[upx]+=dsu_size[upy];
+void dsu_initialize( int n){
+    parent.resize(n);
+    dsu_size.resize(n);
 
-    }
-    else{
+    for( int i=0;i< n;i++){
 
-        parent[upx]=upy;
-        dsu_size[upy]+=dsu_size[upx];
-
-    }
-
-}
-int main()
-{
-    int n; 
-    cin>>n;
-    for( int i=0; i < n;i ++){
         parent[i]=i;
         dsu_size[i]=1;
 
+
+    }
+}
+
+int find_parent(int x){
+    if( parent[x]== x) return x;
+
+    return parent[x]= find_parent(parent[x]);
+
+}
+
+void dsu_union( int x, int y){
+    int px= find_parent( x);
+    int py= find_parent( y);
+    if( px == py) return ;
+
+    if(dsu_size[px] > dsu_size[py]){
+        parent[py]= px;
+        dsu_size[px]+=dsu_size[py];
     }
 
-    dsu_union(0,1);
-    dsu_union(2,3);
-    dsu_union(2,4);
-    dsu_union(1,3);
-   
+    else 
+    {
+        parent[px]=py;
+        dsu_size[py]+=dsu_size[px];
+
+    }
+}
 
 
-    cout<<find_parent(2);
+
+int main()
+{
+    int v, e;
+    cin >> v >> e;
+    dsu_initialize(v);
+    vector<Edge>edge_list;
+
+    for( int i = 0 ; i < e ; i++){
+        int u, v, w;
+
+        cin>> u >> v >>w;
+        edge_list.push_back(Edge(u,v,w));
+    }
+
+    for( Edge e: edge_list){
+        cout<< e.u << " "<< e.v << " "<< e.w<<endl;
+
+    }
+
+    sort( edge_list.begin(), edge_list.end());
 
 
    return 0;
