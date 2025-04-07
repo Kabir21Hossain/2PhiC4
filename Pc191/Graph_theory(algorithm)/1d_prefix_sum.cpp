@@ -14,7 +14,6 @@ void build_prefix_sum_array(){
 
 int prefix_sum(int l, int r){
     return parr[r+1]-parr[l];
-
 }
 
 int main()
@@ -32,11 +31,6 @@ int main()
     build_prefix_sum_array();
     cout<<prefix_sum(2,7)<<endl;
     cout<<prefix_sum(0,5);
-
-
-
-
-
 
 
    return 0;

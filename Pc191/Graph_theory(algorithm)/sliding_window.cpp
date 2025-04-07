@@ -12,9 +12,8 @@ int sliding_window( vector<int> & arr, int k){
         fsum+=arr[i];
 
     }
-    
+     int window_sum= fsum;
     for( int i=k ; i< n; i++){
-         int window_sum= fsum;
          window_sum+=arr[i]-arr[i-k];
          fsum=max(fsum,window_sum);
 
