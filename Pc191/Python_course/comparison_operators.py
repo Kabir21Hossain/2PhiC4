@@ -39,13 +39,17 @@ toss= True
 
 coin = "head"
 
-if coin is "head":
-    print("what do you want to decide:")
-    d=input()
-    if(d=='batting'):
-        print("batting")
-    else:
-        print("fielding")
-else:
-    print("You have lost the toss")
+# if coin is "head":
+#     print("what do you want to decide:")
+#     d=input()
+#     if(d=='batting'):
+#         print("batting")
+#     else:
+#         print("fielding")
+# else:
+#     print("You have lost the toss")
+
+name ="kabir"
+if name=="kabir":
+    print(name)
     
