@@ -50,6 +50,12 @@ age=[32,14,19]
 age_comb=[]
 for p in players:
     for a in age:
-       age_comb.append([a,p])
+       age_comb.append([p,a])
 
 print(age_comb)
+
+
+players=['sakib','mushfik','liton']
+ages=[32,14,19]
+
+age_comb=[(player,age) for player in players for age in ages]

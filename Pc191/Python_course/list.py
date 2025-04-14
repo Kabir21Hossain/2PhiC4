@@ -92,14 +92,35 @@
 # age.clear()
 # print("printing age:",age)
 
-player=[2,2,1,4,5,1,2,3,5,4,4,12,1,4,3,2,5]
-n=player.count(2)
-print(n)
-print(player.index(12))
-player.sort()
-print(player)
-player.reverse()
-print(player)
-l=[]
-l=player.copy()
-print("printing l:",l)
+# player=[2,2,1,4,5,1,2,3,5,4,4,12,1,4,3,2,5]
+# n=player.count(2)
+# print(n)
+# print(player.index(12))
+# player.sort()
+# print(player)
+# player.reverse()
+# print(player)
+# l=[]
+# l=player.copy()
+# print("printing l:",l)
+
+""" Methods
+
+list.append(23) // add 23 at the end of the list
+list.remove(12) // if 12 exist,delete it or show error
+a=list.pop()//delete and return last element
+a=list.pop(index=5) // delete the item at 4th index and return it
+list.clear()
+list.sort()
+list.reverse()
+list2=list.copy()
+n=list.count(34) // how many times 34 is there
+n=len(list)
+s=sum(list)
+list2=list[:] //copy
+list.insert(index=2,value=24)
+list.index(34[,start[,end]])
+
+
+
+ """
