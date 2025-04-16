@@ -45,3 +45,12 @@ everything=sum(2,4)
 print(everything)
 for i in everything:
     print(i)
+
+
+def holo(*args,**kwargs):
+    print(f"{args}")
+    for index,item in kwargs.items():
+        print(f'{index}:{item}')
+
+    
+holo(1,2,4,5,name='kabir',age=34,job='Banker')

@@ -20,7 +20,7 @@
 # print(f)
 # print(type(f))
 
-m=244.3197481
+# m=244.3197481
 # s=str(f)
 # print(s)
 # print(type(s))
@@ -28,16 +28,22 @@ m=244.3197481
 # s=f"{m:.4f}"
 # print(s)
 
-kabir=input("amount:")
-ami = input("amount")
-print(kabir+ami)
-print(type(kabir),type(ami))
-k=int(kabir)
-a=int(ami)
-print("total money: ",k+a)
+# kabir=input("amount:")
+# ami = input("amount")
+# print(kabir+ami)
+# print(type(kabir),type(ami))
+# k=int(kabir)
+# a=int(ami)
+# print("total money: ",k+a)
 
+# import math
 
+# print(math.inf)
 
+print(f"i love {49:>10} you so much jaaan")
+print(f"I loveP{100:<8} you so much jaaan")
+print(f"i love {100:^30} u jaan")
+print(f"{100000000000:,}")
 
 
 
