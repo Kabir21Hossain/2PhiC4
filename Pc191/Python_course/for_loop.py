@@ -33,9 +33,9 @@ for n in name:
  """
 
 num =[1,3,4,6,7,8,9]
-for index,value in enumerate(num):
+for i,value in enumerate(num):
     # print(f"index:{index}  value:{value}")
-    print(index," ",value)
+    print(i," ",value)
 
 
 

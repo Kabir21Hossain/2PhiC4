@@ -1,0 +1,164 @@
+Django is web application framework written in python programming language. It is based on MVT(model view template) design pattern.
+
+it is also called battaries included framework because django provides built-in features for everything.
+
+keyWords:
+
+MTV=Model View template
+ORM=Object Relational Mapping(interaction between database using python)
+
+
+🔹 Key Features of Django
+MTV Architecture (Model-Template-View)
+Similar to MVC, but Django uses the terms:
+
+Model – defines the database structure.
+
+Template – handles the UI (HTML).
+
+View – processes user requests and returns responses.
+
+ORM (Object-Relational Mapping)
+You interact with the database using Python classes instead of writing raw SQL.
+
+Admin Panel (Auto-generated)
+Django automatically creates a professional admin interface for managing site content.
+
+Security
+Django helps developers avoid many common security issues, like:
+
+SQL injection
+
+Cross-site scripting (XSS)
+
+Cross-site request forgery (CSRF)
+
+Clickjacking
+
+Scalability
+It can handle high traffic and large data loads (used by Instagram, Pinterest).
+
+Built-in Tools
+Includes URL routing, form handling, authentication, sessions, and more.
+
+
+
+
+
+🔹 Companies Using Django
+Instagram
+
+Mozilla
+
+Disqus
+
+Pinterest
+
+The Washington Post
+
+
+
+
+
+user --> django --> url -><--- view-----1.model 2.template
+
+
+
+```````````````````Virtual Environment```````````````(as soon as you have created a virtual environment, you will a find a folder in the location)
+
+
+
+A virtual environment in Python is an isolated environment where you can install packages and dependencies without affecting the global Python setup on your system.
+
+* activate virtual enviraonment-
+pip install virtualenv ( globally accessed)
+
+
+--- now at any drive you can make an environment to work---
+
+
+* check version
+virtualenv --version
+
+* naming an enviraonment
+virtualenv my_env
+OR
+python -m venv <name of your environment you want to create>
+
+* activate enviraonment
+source ./my_env/Scripts/activate
+OR
+myenv\Scripts\activate(<you virtual environment name>\Scripts\activate)
+
+*deactivating environment
+deactivate
+
+
+
+------ Django Installation-------
+
+* check if Django exists or not
+    python -m django --version
+
+* if no module 'django' is known,then apply following procedure-
+
+    i. create a virtual environment
+    ii. activate it
+    iii.now install django there(command: pip install django)
+    iv.now check version of django(command: python -m django --version)
+
+* if i get out of this environment(command:deactivate) i won't find this django module(command: python -m django --version) because 
+it can't be globally accessed.
+
+* If I want to access it globally, I have to install django outside the room(commad: pip install django).Now we can access it globally
+
+* how uninstall django module :(command: pip uninstall django)
+
+* how to show all pip list:( command: pip list)
+* how to show any module(pip show <module name>)(example: pip show virtualenv,pip show django)
+
+
+
+(extension in vscode: python,python extension pack,python indent,Django,django)
+-------- First Django  Project-----(in terminal)
+    1. django-admin startproject first_project # explanation: django-admin startproject <project name>
+    # as soon as you have execute the first line, it will create a folder name first_project. Inside it you have a same name folder.Inside it you will find so many packages. (run manage.py file)
+    2.cd first_project
+    3.python manage.py runserver
+    4. you will find a link in terminal ,click on it
+
+
+----------first_project folder-----
+        /                   \
+                                \
+
+    /
+    first_project               manage.py
+
+    - __init__.py(because this file ,python consider any folder containing this as python package)
+    -  wsgi.py(web server gateway interface-is a specification that describes how a web server communicates with web application synchronous)
+    - asgi.py(asynchronous server gateway interface. Provides both asynchronous and synchronous)
+    - settings.py(contains all the information or data about project setting.config info,template installed application,validators )
+    - urls.py( url with application)
+    - manage.py( project specific command line utility)
+
+    unit of project = application(projects contains of application)
+
+    ex:
+
+    school management(project or folder)
+                |
+                | Teachers(appllication or apps)
+                | students(")
+                | Fees (")
+                | courses(")
+                
+    * to create application or apps in a project
+    command: django-admin startapp <app_name>
+
+
+
+
+    ------- working with urls.py and views.py-----
+    1. views.py and write code there
+    

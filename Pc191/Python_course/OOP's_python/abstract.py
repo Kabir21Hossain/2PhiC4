@@ -53,3 +53,20 @@ from abc import ABC,abstractmethod
 # iss=IslamiBank(4.5)
 # iss.loan_interest()
 
+
+
+"""
+what is the definition of abstract class and interfaces in python
+
+remember they both are class- one is partial abstract class(refers to that it may have function implemented or unimplemented and it may have attributes too) where on the other hand interfaces don't have any constructor or any attributes(it will have only unimplemented methods),no interfaces keywords are there.
+
+
+
+✅ Key Differences Summary
+Feature	                        Abstract Class              	Interface (in Python)
+Implementation Allowed	            Yes (methods and variables)  	No (only method signatures)
+Constructors	                    Yes	                            No
+Use of @abstractmethod	        Optional for some methods	        Required for all methods
+Multiple Inheritance	        Limited if using abstract classes	More common with interface-like ABCs
+Purpose	Code                    reuse + structure	                Structure only (contract)
+"""

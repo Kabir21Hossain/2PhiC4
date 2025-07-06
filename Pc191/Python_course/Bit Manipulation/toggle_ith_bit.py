@@ -1,0 +1,5 @@
+a=int(input('a:'))
+print(bin(a)[2:])
+i=int(input('which bit to toggling:'))
+a=a ^ (1<< i)
+print(bin(a)[2:])

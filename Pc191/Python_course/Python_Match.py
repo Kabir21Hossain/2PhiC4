@@ -15,7 +15,7 @@ match day:
         print("Thursday")
     case 7:
         print("Friday")
-    case 8|9|10|11 if month==1:
+    case 9|10|11 if month==1:
         print("May day")
     case _:
         print("No fv day")

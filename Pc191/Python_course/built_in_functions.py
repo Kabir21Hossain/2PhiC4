@@ -17,5 +17,8 @@ print(elements)
 total= sum([1,100,3,-4,-43])
 print(total)
 
+for i,j in enum([1,2,3,4,5,10,3,100]):
+    print(i,j)
+
 result=pow(2,5)
 print(result)

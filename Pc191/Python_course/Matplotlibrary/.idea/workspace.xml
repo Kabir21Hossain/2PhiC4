@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c8c8e35-a564-45f4-aa51-ea549346d67a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Bars_diagram.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Histogram.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/introduction_matplot_method.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pandas_game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pie_chart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scatter_graph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Numpy_Library/Numpy_random/Random_distribution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Numpy_Library/Numpy_random/pandas_lib.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Numpy_Library/Numpy_random/seaborn_library.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Numpy_Library/Numpy_random/very_introduction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data_structure/MergeSort.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data_structure/MergeSort.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/.idea/Numpy_module.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/Accessing_numpy_array.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/Data_types.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/Introduction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/numpy_iterating.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Numpy_module/slicing.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2vurBSZ3pjtLtIRySOivjqutNWN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Bars_diagram.executor": "Run",
+    "Python.Histogram.executor": "Run",
+    "Python.introduction_matplot_method.executor": "Run",
+    "Python.pandas_game.executor": "Run",
+    "Python.pie_chart.executor": "Run",
+    "Python.scatter_graph.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c8c8e35-a564-45f4-aa51-ea549346d67a" name="Changes" comment="" />
+      <created>1745005666957</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745005666957</updated>
+    </task>
+    <servers />
+  </component>
+</project>

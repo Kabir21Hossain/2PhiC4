@@ -27,3 +27,10 @@ print(text)
 
 print("kabir bro"+"how are you?")
 print("non"+" "+"sense")
+
+name=100
+
+def fun():
+    name=34
+    print(name)
+fun()
