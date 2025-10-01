@@ -1,0 +1,58 @@
+1. define even or odd
+2. find total number of set bits
+3. set ith bit
+4. unset ith bit
+5. unset rightmost set bit
+6.swap two numbers
+7.toggle the ith bit
+8.check if power of 2
+9.check if ith bit  is set or not
+
+
+solution1:
+     if number & 1 == 0:
+        even
+    else:
+        odd
+    
+
+solution6:
+
+        int a,b;
+        a=a^b
+        b=a^b
+        a=b^a
+
+
+solution 3:
+    num | (1<<i)
+
+solution 4:
+    num & (~(1<<i))
+
+solution 7:
+
+    num^(1<<i)
+
+solution 5:
+    n & (n-1):
+
+solution 2:
+while(n):
+    cnt+=1
+    n=n&(n-1)
+
+solution 8:
+    if n&(n-1)==0:
+        power of 2
+    else:
+        not power of 2
+
+
+solution 9:
+   if  n & (1<<i):
+    set bit
+    else unset bit
+
+    
+
