@@ -9,6 +9,7 @@ ORM=Object Relational Mapping(interaction between database using python)
 
 
 🔹 Key Features of Django
+
 MTV Architecture (Model-Template-View)
 Similar to MVC, but Django uses the terms:
 
@@ -46,6 +47,7 @@ Includes URL routing, form handling, authentication, sessions, and more.
 
 
 🔹 Companies Using Django
+
 Instagram
 
 Mozilla
@@ -71,6 +73,7 @@ user --> django --> url -><--- view-----1.model 2.template
 A virtual environment in Python is an isolated environment where you can install packages and dependencies without affecting the global Python setup on your system.
 
 * activate virtual enviraonment-
+
 pip install virtualenv ( globally accessed)
 
 
@@ -78,19 +81,24 @@ pip install virtualenv ( globally accessed)
 
 
 * check version
+
 virtualenv --version
 
 * naming an enviraonment
+
 virtualenv my_env
+
 OR
 python -m venv <name of your environment you want to create>
 
 * activate enviraonment
+
 source ./my_env/Scripts/activate
 OR
 myenv\Scripts\activate(<you virtual environment name>\Scripts\activate)
 
 *deactivating environment
+
 deactivate
 
 
@@ -98,16 +106,16 @@ deactivate
 ------ Django Installation-------
 
 * check if Django exists or not
-    python -m django --version
+    python -m django --version
 
 * if no module 'django' is known,then apply following procedure-
 
-    i. create a virtual environment
-    ii. activate it
-    iii.now install django there(command: pip install django)
-    iv.now check version of django(command: python -m django --version)
+    i. create a virtual environment
+    ii. activate it
+    iii.now install django there(command: pip install django)
+    iv.now check version of django(command: python -m django --version)
 
-* if i get out of this environment(command:deactivate) i won't find this django module(command: python -m django --version) because 
+* if i get out of this environment(command:deactivate) i won't find this django module(command: python -m django --version) because
 it can't be globally accessed.
 
 * If I want to access it globally, I have to install django outside the room(commad: pip install django).Now we can access it globally
@@ -121,44 +129,115 @@ it can't be globally accessed.
 
 (extension in vscode: python,python extension pack,python indent,Django,django)
 -------- First Django  Project-----(in terminal)
-    1. django-admin startproject first_project # explanation: django-admin startproject <project name>
-    # as soon as you have execute the first line, it will create a folder name first_project. Inside it you have a same name folder.Inside it you will find so many packages. (run manage.py file)
-    2.cd first_project
-    3.python manage.py runserver
-    4. you will find a link in terminal ,click on it
+    1. django-admin startproject first_project # explanation: django-admin startproject <project name>
+    # as soon as you have execute the first line, it will create a folder name first_project. Inside it you have a same name folder.Inside it you will find so many packages. (run manage.py file)
+    2.cd first_project
+    3.python manage.py runserver
+    4. you will find a link in terminal ,click on it
 
 
 ----------first_project folder-----
-        /                   \
-                                \
+/                   \
+                                \
 
-    /
-    first_project               manage.py
+    /
+    first_project               manage.py
 
-    - __init__.py(because this file ,python consider any folder containing this as python package)
-    -  wsgi.py(web server gateway interface-is a specification that describes how a web server communicates with web application synchronous)
-    - asgi.py(asynchronous server gateway interface. Provides both asynchronous and synchronous)
-    - settings.py(contains all the information or data about project setting.config info,template installed application,validators )
-    - urls.py( url with application)
-    - manage.py( project specific command line utility)
+    - __init__.py(because this file ,python consider any folder containing this as python package)
+    -  wsgi.py(web server gateway interface-is a specification that describes how a web server communicates with web application synchronous)
+    - asgi.py(asynchronous server gateway interface. Provides both asynchronous and synchronous)
+    - settings.py(contains all the information or data about project setting.config info,template installed application,validators )
+    - urls.py( url with application)
+    - manage.py( project specific command line utility)
 
-    unit of project = application(projects contains of application)
+    unit of project = application(projects contains of application)
 
-    ex:
+    ex:
 
-    school management(project or folder)
-                |
-                | Teachers(appllication or apps)
-                | students(")
-                | Fees (")
-                | courses(")
-                
-    * to create application or apps in a project
-    command: django-admin startapp <app_name>
-
-
+    school management(project or folder)
+                |
+                | Teachers(appllication or apps)
+                | students(")
+                | Fees (")
+                | courses(")
+ 
+    * to create application or apps in a project
+    command: django-admin startapp <app_name>
 
 
-    ------- working with urls.py and views.py-----
-    1. views.py and write code there
-    
+
+
+    ------- working with urls.py and views.py-----
+
+
+        * you will find no 'views.py' file in you 'first_project' folder.
+ 	* create a 'views.py' under 'first_project' folder.
+ 	* write function in 'views.py'
+ 
+ 				from django.http import HttpResponse
+
+ 			**def home(request):**
+     					\*\*return HttpResponse('hello this is my first django page')\*\*
+
+
+
+				\*\*def about(request):\*\*
+
+    					\*\*return HttpResponse('hello, this is my about page')\*\*
+
+	
+
+
+
+
+
+
+
+ 
+ 	* connect with urls.py
+
+ 		from . import views
+
+
+ 	**urlpatterns = \[**
+    			\*\*path('admin/', admin.site.urls),\*\*
+
+    			\*\*path('',views.home),\*\*
+
+    			\*\*path('about/',views.about)\*\*
+
+			\*\*]\*\*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---APPS(Application)---
+
+Now dynamicity----->
+ 		*create your firs app:
+ 			( command:django-admin startapp 'first_app' )inside your 'first_project'
+
+ 		* go to settings.py in your first_project and in installed apps, add '<your app>,'
+ 
+ 		* create a 'urls.py' in first_app
+ 		* in first_project urls.py----								i. import include 							ii. path('',include('first_app.urls'))
+
+
+
