@@ -18,8 +18,7 @@ vector<vector<int>> sol(int n, int k)
             path.push_back(i);
             backtrack(i + 1);
             path.pop_back();
-            backtrack(i + 1);
-        }
+                }
     };
     backtrack(1);
     return result;
