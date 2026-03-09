@@ -1,0 +1,25 @@
+class Node:
+    def __init(self,val):
+        self.val=val
+        self.children=[]
+
+
+def isMirror(root1,root2):
+    if not root1 and not root2:
+        return True
+
+    if not root1 or not root2:
+        return False
+    
+    if root1.val!=root2.val:
+        return False
+
+    if len(root1.children)!=len(root2.children):
+        return False
+
+    for c1,c2 in zip(root1.children,reversed(root2.children)):
+        if not isMirror(c1,c2):
+            return False
+
+    return True
+
